@@ -1,7 +1,7 @@
 
 
 # config
-`import "Smilo-blackbox/src/server/config"`
+`import "Didux-blackbox/src/server/config"`
 
 * [Overview](#pkg-overview)
 * [Index](#pkg-index)
@@ -26,7 +26,7 @@
 
 
 #### <a name="pkg-files">Package files</a>
-[config.go](/src/Smilo-blackbox/src/server/config/config.go) [types.go](/src/Smilo-blackbox/src/server/config/types.go) 
+[config.go](/src/Didux-blackbox/src/server/config/config.go) [types.go](/src/Didux-blackbox/src/server/config/types.go) 
 
 
 

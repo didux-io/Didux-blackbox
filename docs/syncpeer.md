@@ -1,7 +1,7 @@
 
 
 # syncpeer
-`import "Smilo-blackbox/src/server/syncpeer"`
+`import "Didux-blackbox/src/server/syncpeer"`
 
 * [Overview](#pkg-overview)
 * [Index](#pkg-index)
@@ -31,7 +31,7 @@
 
 
 #### <a name="pkg-files">Package files</a>
-[main.go](/src/Smilo-blackbox/src/server/syncpeer/main.go) [types.go](/src/Smilo-blackbox/src/server/syncpeer/types.go) 
+[main.go](/src/Didux-blackbox/src/server/syncpeer/main.go) [types.go](/src/Didux-blackbox/src/server/syncpeer/types.go) 
 
 
 

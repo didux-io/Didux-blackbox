@@ -29,8 +29,8 @@ import (
 
 	"path/filepath"
 
-	"Smilo-blackbox/src/server/config"
-	"Smilo-blackbox/src/utils"
+	"Didux-blackbox/src/server/config"
+	"Didux-blackbox/src/utils"
 )
 
 // DoUnixPostJSONRequest is used for test real request calls.

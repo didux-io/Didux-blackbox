@@ -17,7 +17,7 @@
 package server
 
 import (
-	"Smilo-blackbox/src/data/types"
+	"Didux-blackbox/src/data/types"
 	"bytes"
 	"io"
 	"io/ioutil"
@@ -27,7 +27,7 @@ import (
 
 	"gopkg.in/urfave/cli.v1"
 
-	"Smilo-blackbox/src/server/api"
+	"Didux-blackbox/src/server/api"
 
 	"encoding/base64"
 	"encoding/json"
@@ -37,10 +37,10 @@ import (
 	"os"
 	"time"
 
-	"Smilo-blackbox/src/crypt"
-	"Smilo-blackbox/src/server/config"
-	"Smilo-blackbox/src/server/syncpeer"
-	"Smilo-blackbox/src/utils"
+	"Didux-blackbox/src/crypt"
+	"Didux-blackbox/src/server/config"
+	"Didux-blackbox/src/server/syncpeer"
+	"Didux-blackbox/src/utils"
 )
 
 func TestMain(m *testing.M) {

@@ -13,10 +13,10 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"Smilo-blackbox/src/crypt"
-	"Smilo-blackbox/src/data"
-	"Smilo-blackbox/src/data/types"
-	"Smilo-blackbox/src/utils"
+	"Didux-blackbox/src/crypt"
+	"Didux-blackbox/src/data"
+	"Didux-blackbox/src/data/types"
+	"Didux-blackbox/src/utils"
 )
 
 func TestMain(m *testing.M) {

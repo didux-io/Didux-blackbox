@@ -17,10 +17,10 @@
 package data
 
 import (
-	"Smilo-blackbox/src/data/boltdb"
-	"Smilo-blackbox/src/data/dynamodb"
-	"Smilo-blackbox/src/data/redis"
-	"Smilo-blackbox/src/data/types"
+	"Didux-blackbox/src/data/boltdb"
+	"Didux-blackbox/src/data/dynamodb"
+	"Didux-blackbox/src/data/redis"
+	"Didux-blackbox/src/data/types"
 )
 
 var dbFile string

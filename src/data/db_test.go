@@ -17,13 +17,13 @@
 package data
 
 import (
-	"Smilo-blackbox/src/utils"
+	"Didux-blackbox/src/utils"
 	"os"
 	"strconv"
 	"testing"
 	"time"
 
-	"Smilo-blackbox/src/data/types"
+	"Didux-blackbox/src/data/types"
 
 	"github.com/stretchr/testify/require"
 )

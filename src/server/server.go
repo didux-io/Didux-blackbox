@@ -22,10 +22,10 @@ import (
 	"os"
 	"strconv"
 
-	"Smilo-blackbox/src/data"
-	"Smilo-blackbox/src/server/syncpeer"
+	"Didux-blackbox/src/data"
+	"Didux-blackbox/src/server/syncpeer"
 
-	"Smilo-blackbox/src/server/api"
+	"Didux-blackbox/src/server/api"
 
 	"crypto/tls"
 	"path"
@@ -39,8 +39,8 @@ import (
 
 	"github.com/tidwall/buntdb"
 
-	"Smilo-blackbox/src/server/config"
-	"Smilo-blackbox/src/utils"
+	"Didux-blackbox/src/server/config"
+	"Didux-blackbox/src/utils"
 )
 
 var (

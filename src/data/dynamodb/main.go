@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"time"
 
-	"Smilo-blackbox/src/data/types"
+	"Didux-blackbox/src/data/types"
 
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"

@@ -23,13 +23,13 @@ import (
 	"fmt"
 	"net/http"
 
-	"Smilo-blackbox/src/data/types"
+	"Didux-blackbox/src/data/types"
 
 	"bytes"
 
-	"Smilo-blackbox/src/server/encoding"
-	"Smilo-blackbox/src/server/syncpeer"
-	"Smilo-blackbox/src/utils"
+	"Didux-blackbox/src/server/encoding"
+	"Didux-blackbox/src/server/syncpeer"
+	"Didux-blackbox/src/utils"
 )
 
 //GetVersion Request path "/version", response plain text version ID
@@ -80,6 +80,8 @@ func RetrieveAndDecryptPayload(w http.ResponseWriter, r *http.Request, key []byt
 		requestError(w, http.StatusNotFound, message)
 		return nil
 	}
+
+	fmt.Sprintf("Transaction key: %s found", hex.EncodeToString(key))
 
 	encodedPayloadData := encoding.Deserialize(encTrans.EncodedPayload)
 	payload := encodedPayloadData.Decode(to)

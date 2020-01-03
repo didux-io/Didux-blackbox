@@ -1,7 +1,7 @@
 
 
 # model
-`import "Smilo-blackbox/src/server/model"`
+`import "Didux-blackbox/src/server/model"`
 
 * [Overview](#pkg-overview)
 * [Index](#pkg-index)
@@ -16,7 +16,7 @@
 
 
 #### <a name="pkg-files">Package files</a>
-[p2p_headers.go](/src/Smilo-blackbox/src/server/model/p2p_headers.go) [peernode.go](/src/Smilo-blackbox/src/server/model/peernode.go) 
+[p2p_headers.go](/src/Didux-blackbox/src/server/model/p2p_headers.go) [peernode.go](/src/Didux-blackbox/src/server/model/peernode.go) 
 
 
 

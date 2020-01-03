@@ -24,16 +24,16 @@ import (
 	"net/http"
 	"strings"
 
-	"Smilo-blackbox/src/data/types"
+	"Didux-blackbox/src/data/types"
 
-	"Smilo-blackbox/src/server/encoding"
+	"Didux-blackbox/src/server/encoding"
 
 	"io/ioutil"
 
 	"github.com/gorilla/mux"
 
-	"Smilo-blackbox/src/crypt"
-	"Smilo-blackbox/src/utils"
+	"Didux-blackbox/src/crypt"
+	"Didux-blackbox/src/utils"
 )
 
 // SendRaw It receives headers "bb0x-from" and "bb0x-to", payload body and returns Status Code 200 and encoded key plain text.
@@ -122,6 +122,8 @@ func SendRaw(w http.ResponseWriter, r *http.Request) {
 
 	if err == nil {
 		txEncoded := base64.StdEncoding.EncodeToString(encTrans.Hash)
+		messageDebug := fmt.Sprintf("Response: ", base64.StdEncoding.EncodeToString(encTrans.Hash))
+		log.Error(messageDebug)
 		log.WithField("txEncoded", txEncoded).Info("Created transaction, ")
 		_, err = w.Write([]byte(txEncoded))
 		if err == nil {
@@ -217,7 +219,7 @@ func SendSignedTx(w http.ResponseWriter, r *http.Request) {
 		requestError(w, http.StatusBadRequest, message)
 		return
 	}
-
+	log.WithField("Key", key).Info("Finding key:")
 	encRawTrans, err := types.FindEncryptedRawTransaction(key)
 	if err != nil || encRawTrans == nil {
 		message := fmt.Sprintf("Raw Transaction key: %s not found", hex.EncodeToString(key))
@@ -227,7 +229,9 @@ func SendSignedTx(w http.ResponseWriter, r *http.Request) {
 	}
 
 	encPayload := encoding.Deserialize(encRawTrans.EncodedPayload)
+	log.WithField("encPayload", encPayload).Info("Received encPayload")
 	payload := encPayload.Decode(crypt.GetPublicKeys()[0])
+	log.WithField("payload", payload).Info("Received payload")
 	encTrans, err := createNewEncodedTransaction(w, r, payload, encRawTrans.Sender, recipients)
 
 	if err == nil {

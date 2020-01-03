@@ -1,7 +1,7 @@
 
 
 # api
-`import "Smilo-blackbox/src/server/api"`
+`import "Didux-blackbox/src/server/api"`
 
 * [Overview](#pkg-overview)
 * [Index](#pkg-index)
@@ -46,7 +46,7 @@
 
 
 #### <a name="pkg-files">Package files</a>
-[common.go](/src/Smilo-blackbox/src/server/api/common.go) [log.go](/src/Smilo-blackbox/src/server/api/log.go) [private.go](/src/Smilo-blackbox/src/server/api/private.go) [public.go](/src/Smilo-blackbox/src/server/api/public.go) [types.go](/src/Smilo-blackbox/src/server/api/types.go) 
+[common.go](/src/Didux-blackbox/src/server/api/common.go) [log.go](/src/Didux-blackbox/src/server/api/log.go) [private.go](/src/Didux-blackbox/src/server/api/private.go) [public.go](/src/Didux-blackbox/src/server/api/public.go) [types.go](/src/Didux-blackbox/src/server/api/types.go) 
 
 
 

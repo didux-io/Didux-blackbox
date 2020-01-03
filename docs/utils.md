@@ -1,7 +1,7 @@
 
 
 # utils
-`import "Smilo-blackbox/src/utils"`
+`import "Didux-blackbox/src/utils"`
 
 * [Overview](#pkg-overview)
 * [Index](#pkg-index)
@@ -16,7 +16,7 @@
 
 
 #### <a name="pkg-files">Package files</a>
-[utils.go](/src/Smilo-blackbox/src/utils/utils.go) 
+[utils.go](/src/Didux-blackbox/src/utils/utils.go) 
 
 
 ## <a name="pkg-constants">Constants</a>

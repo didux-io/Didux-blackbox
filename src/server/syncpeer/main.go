@@ -17,8 +17,8 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"Smilo-blackbox/src/crypt"
-	"Smilo-blackbox/src/data/types"
+	"Didux-blackbox/src/crypt"
+	"Didux-blackbox/src/data/types"
 )
 
 var (

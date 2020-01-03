@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"Smilo-blackbox/src/data/types"
+	"Didux-blackbox/src/data/types"
 
 	"github.com/asdine/storm"
 	"github.com/sirupsen/logrus"

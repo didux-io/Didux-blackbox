@@ -22,18 +22,18 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"Smilo-blackbox/src/data/types"
+	"Didux-blackbox/src/data/types"
 
 	"encoding/base64"
 	"strings"
 
-	"Smilo-blackbox/src/server/encoding"
+	"Didux-blackbox/src/server/encoding"
 
 	"github.com/gorilla/mux"
 
-	"Smilo-blackbox/src/crypt"
-	"Smilo-blackbox/src/server/syncpeer"
-	"Smilo-blackbox/src/utils"
+	"Didux-blackbox/src/crypt"
+	"Didux-blackbox/src/server/syncpeer"
+	"Didux-blackbox/src/utils"
 )
 
 // GetPartyInfo It receives a POST request with a json containing url and key, returns local publicKeys and a proof that private key is known.
@@ -390,6 +390,10 @@ func StoreRaw(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	sendResp := KeyJSON{Key: base64.StdEncoding.EncodeToString(encRawTrans.Hash)}
+
+	messageDebug := fmt.Sprintf("Response: ", base64.StdEncoding.EncodeToString(encRawTrans.Hash))
+	log.Error(messageDebug)
+
 	err = json.NewEncoder(w).Encode(sendResp)
 	if err != nil {
 		message := fmt.Sprintf("Error encoding json: %s", err)

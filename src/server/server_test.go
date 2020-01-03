@@ -21,9 +21,9 @@ import (
 	"net/http"
 	"testing"
 
-	"Smilo-blackbox/src/data/types"
+	"Didux-blackbox/src/data/types"
 
-	"Smilo-blackbox/src/server/api"
+	"Didux-blackbox/src/server/api"
 
 	"bytes"
 	"encoding/json"
@@ -33,10 +33,10 @@ import (
 	"github.com/drewolson/testflight"
 	"github.com/stretchr/testify/require"
 
-	"Smilo-blackbox/src/crypt"
-	"Smilo-blackbox/src/server/encoding"
-	"Smilo-blackbox/src/server/syncpeer"
-	"Smilo-blackbox/src/utils"
+	"Didux-blackbox/src/crypt"
+	"Didux-blackbox/src/server/encoding"
+	"Didux-blackbox/src/server/syncpeer"
+	"Didux-blackbox/src/utils"
 )
 
 var testEncryptedTransaction = createEncryptedTransaction()

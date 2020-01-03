@@ -3,7 +3,7 @@ package boltdb
 import (
 	"time"
 
-	"Smilo-blackbox/src/data/types"
+	"Didux-blackbox/src/data/types"
 )
 
 type EncryptedTransaction struct {

@@ -24,7 +24,7 @@ import (
 
 	"io/ioutil"
 
-	"Smilo-blackbox/src/crypt"
+	"Didux-blackbox/src/crypt"
 )
 
 //EncodedPayloadData holds the encoded payload data (sender,nonce,cipher,recipientNonce and list)

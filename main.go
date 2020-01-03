@@ -17,17 +17,17 @@
 package main
 
 import (
-	"Smilo-blackbox/src/crypt"
-	"Smilo-blackbox/src/data"
-	"Smilo-blackbox/src/server"
-	"Smilo-blackbox/src/server/config"
-	"Smilo-blackbox/src/utils"
+	"Didux-blackbox/src/crypt"
+	"Didux-blackbox/src/data"
+	"Didux-blackbox/src/server"
+	"Didux-blackbox/src/server/config"
+	"Didux-blackbox/src/utils"
 	"os"
 
 	"fmt"
 	"time"
 
-	"Smilo-blackbox/src/server/syncpeer"
+	"Didux-blackbox/src/server/syncpeer"
 
 	"runtime/pprof"
 

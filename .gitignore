@@ -1,4 +1,6 @@
 blackbox.db
+blackbox_server.db
+blackbox_server.ipc
 blackbox
 .idea
 src/server/*.db

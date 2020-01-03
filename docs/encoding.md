@@ -1,7 +1,7 @@
 
 
 # encoding
-`import "Smilo-blackbox/src/server/encoding"`
+`import "Didux-blackbox/src/server/encoding"`
 
 * [Overview](#pkg-overview)
 * [Index](#pkg-index)
@@ -19,7 +19,7 @@
 
 
 #### <a name="pkg-files">Package files</a>
-[encoded_payload_data.go](/src/Smilo-blackbox/src/server/encoding/encoded_payload_data.go) 
+[encoded_payload_data.go](/src/Didux-blackbox/src/server/encoding/encoded_payload_data.go) 
 
 
 

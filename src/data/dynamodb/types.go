@@ -8,7 +8,7 @@ import (
 	dynDB "github.com/aws/aws-sdk-go/service/dynamodb"
 	dynDBAttr "github.com/aws/aws-sdk-go/service/dynamodb/dynamodbattribute"
 
-	utils2 "Smilo-blackbox/src/utils"
+	utils2 "Didux-blackbox/src/utils"
 )
 
 func GetDeleteItemInput(data interface{}) (*dynDB.DeleteItemInput, error) {

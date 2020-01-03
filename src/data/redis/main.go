@@ -6,12 +6,12 @@ import (
 	"reflect"
 	"time"
 
-	"Smilo-blackbox/src/data/types"
+	"Didux-blackbox/src/data/types"
 
 	"github.com/go-redis/redis"
 	"github.com/sirupsen/logrus"
 
-	utils2 "Smilo-blackbox/src/utils"
+	utils2 "Didux-blackbox/src/utils"
 )
 
 var (
