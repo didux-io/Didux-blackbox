@@ -157,17 +157,6 @@ func (rds *DatabaseInstance) GetNextPeer(postpone time.Duration) (*types.Peer, e
 func DBOpen(filename string, log *logrus.Entry) (*DatabaseInstance, error) {
 	byteValue, err := utils2.ReadAllFile(filename, log)
 
-	//addr := strings.Split(hostnames, ",")
-	//c := redis.NewClusterClient(&redis.ClusterOptions{
-	//	Addrs: addr,
-	//	Password: "FLuSALIghTErEgEOVERI",
-	//})
-	//if err := c.Ping().Err(); err != nil {
-	//	panic("Unable to connect to redis " + err.Error())
-	//}
-	//client.c = c
-	//return client
-
 	if err == nil {
 		var options redis.ClusterOptions
 		err = json.Unmarshal(byteValue, &options)
