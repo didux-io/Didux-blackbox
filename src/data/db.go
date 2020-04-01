@@ -20,6 +20,7 @@ import (
 	"Didux-blackbox/src/data/boltdb"
 	"Didux-blackbox/src/data/dynamodb"
 	"Didux-blackbox/src/data/redis"
+	"Didux-blackbox/src/data/rediscluster"
 	"Didux-blackbox/src/data/types"
 )
 
@@ -29,6 +30,7 @@ var dbEngine = ""
 const BOLTDBENGINE = "boltdb"
 const DYNAMODBENGINE = "dynamodb"
 const REDISENGINE = "redis"
+const REDISCLUSTERENGINE = "rediscluster"
 
 // SetFilename set filename
 func SetFilename(filename string) {
@@ -49,6 +51,8 @@ func Start() {
 		types.DBI, err = dynamodb.DbOpen(dbFile, log)
 	case REDISENGINE:
 		types.DBI, err = redis.DBOpen(dbFile, log)
+	case REDISCLUSTERENGINE:
+		types.DBI, err = rediscluster.DBOpen(dbFile, log)
 	default:
 		panic("Unknown Database Engine")
 	}

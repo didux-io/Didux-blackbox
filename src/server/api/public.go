@@ -391,8 +391,8 @@ func StoreRaw(w http.ResponseWriter, r *http.Request) {
 	}
 	sendResp := KeyJSON{Key: base64.StdEncoding.EncodeToString(encRawTrans.Hash)}
 
-	messageDebug := fmt.Sprintf("Response: ", base64.StdEncoding.EncodeToString(encRawTrans.Hash))
-	log.Error(messageDebug)
+	messageDebug := fmt.Sprintf("Response: %s", base64.StdEncoding.EncodeToString(encRawTrans.Hash))
+	log.Debug(messageDebug)
 
 	err = json.NewEncoder(w).Encode(sendResp)
 	if err != nil {

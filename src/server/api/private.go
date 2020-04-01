@@ -122,8 +122,6 @@ func SendRaw(w http.ResponseWriter, r *http.Request) {
 
 	if err == nil {
 		txEncoded := base64.StdEncoding.EncodeToString(encTrans.Hash)
-		messageDebug := fmt.Sprintf("Response: ", base64.StdEncoding.EncodeToString(encTrans.Hash))
-		log.Error(messageDebug)
 		log.WithField("txEncoded", txEncoded).Info("Created transaction, ")
 		_, err = w.Write([]byte(txEncoded))
 		if err == nil {
