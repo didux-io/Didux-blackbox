@@ -29,7 +29,7 @@ import (
 
 const (
 	//BlackBoxVersion holds bb version
-	BlackBoxVersion = "v1.0.4"
+	BlackBoxVersion = "v1.0.6"
 	//UpcheckMessage http up check msg
 	UpcheckMessage = "I'm up!"
 
