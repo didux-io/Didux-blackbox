@@ -22,6 +22,7 @@ require (
 	github.com/golang/snappy v0.0.1 // indirect
 	github.com/gorilla/context v1.1.1 // indirect
 	github.com/gorilla/mux v1.6.2
+	github.com/karalabe/xgo v0.0.0-20191115072854-c5ccff8648a7 // indirect
 	github.com/onrik/logrus v0.0.0-20181225141908-a09d5cdcdc62
 	github.com/sirupsen/logrus v1.3.0
 	github.com/stretchr/testify v1.3.0
@@ -39,6 +40,7 @@ require (
 	golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2
 	google.golang.org/appengine v1.6.5 // indirect
 	gopkg.in/urfave/cli.v1 v1.20.0
+	src.techknowlogick.com/xgo v0.0.0-20200319213703-c43d4c44a6ac // indirect
 )
 
 go 1.13

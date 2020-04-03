@@ -11,3 +11,4 @@ blackbox-peers.db
 *.ipc
 vendor
 *.db
+bin

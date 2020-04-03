@@ -22,7 +22,7 @@ version:
 	echo $(VERSION)
 
 clean:
-
+	rm -rf ./bin
 
 build: clean
 	go build -o bin/blackbox main.go
@@ -111,9 +111,9 @@ install-linters: ## Install linters
 	go get -u github.com/golangci/golangci-lint/cmd/golangci-lint
 
 install-tools:
-	go get -u github.com/karalabe/xgo
+	go get -u src.techknowlogick.com/xgo
 
-cross: install-tools blackbox-linux blackbox-linux-arm blackbox-darwin blackbox-windows blackbox-android blackbox-ios
+cross: install-tools blackbox-linux blackbox-linux-arm blackbox-darwin blackbox-windows
 	xgo --go=latest --targets=linux/amd64  --remote=github.com/didux-io/Didux-blackbox .
 
 blackbox-linux:
@@ -135,8 +135,8 @@ blackbox-darwin:
 	xgo --go=latest --targets=darwin/386 -out=./bin/blackbox .
 
 blackbox-windows:
-#	xgo --go=latest --targets=windows/amd64 -out=./bin/blackbox .
-#	xgo --go=latest --targets=windows/386 -out=./bin/blackbox .
+	xgo --go=latest --targets=windows/amd64 -out=./bin/blackbox .
+	xgo --go=latest --targets=windows/386 -out=./bin/blackbox .
 
 blackbox-android:
 	xgo --go=latest --targets=android-16/386 -out=./bin/blackbox .
