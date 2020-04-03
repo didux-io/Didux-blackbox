@@ -1,17 +1,10 @@
 # Blackbox
 
-Official Golang implementation of the Smilo Vault protocol. 
-
-[![Build Status](https://travis-ci.org/Smilo-platform/Smilo-blackbox.svg?branch=master)](https://travis-ci.org/Smilo-platform/Smilo-blackbox)
-[![GoDoc](https://godoc.org/github.com/Smilo-platform/Smilo-blackbox?status.svg)](https://godoc.org/github.com/Smilo-platform/Smilo-blackbox)
-[![Go Report Card](https://goreportcard.com/badge/github.com/Smilo-platform/Smilo-blackbox)](https://goreportcard.com/report/github.com/Smilo-platform/Smilo-blackbox)
-[![Docker Repository on Quay](https://quay.io/repository/smilo/smilo-blackbox/status "Docker Repository on Quay")](https://quay.io/repository/smilo/smilo-blackbox)
-[![Gitter](https://badges.gitter.im/go-smilo/community.svg)](https://gitter.im/go-smilo/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+Official Golang implementation of the Didux Vault protocol. 
 
 ### Dependencies
 - Golang 1.11
 - Dep
-
 
 ## DOCS
 * [API](docs/api.md) documentation
@@ -28,7 +21,7 @@ Official Golang implementation of the Smilo Vault protocol.
 
 ![New Transaction Sequence](./docs/transaction-sequence-diagram.png)
 
-## Smilo Hybrid Blockchain + Blackbox Architecture Diagram
+## Didux Hybrid Blockchain + Blackbox Architecture Diagram
 
 ![Logical architecture](./docs/smilo-architecture.png)
 
@@ -36,6 +29,8 @@ Official Golang implementation of the Smilo Vault protocol.
 ## License
 
 ```
+Copyright 2020 The Didux-blackbox Authors
+Copyright 2019 The Didux-blackbox Authors
 Copyright 2019 The Smilo-blackbox Authors
 This file is part of the Smilo-blackbox library.
 

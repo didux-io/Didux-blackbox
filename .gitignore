@@ -1,4 +1,6 @@
 blackbox.db
+blackbox_server.db
+blackbox_server.ipc
 blackbox
 .idea
 src/server/*.db
@@ -6,3 +8,6 @@ src/server/*.sock
 src/data/*.db
 key.txt
 blackbox-peers.db
+*.ipc
+vendor
+*.db

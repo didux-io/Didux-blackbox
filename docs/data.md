@@ -1,7 +1,7 @@
 
 
 # data
-`import "Smilo-blackbox/src/data"`
+`import "Didux-blackbox/src/data"`
 
 * [Overview](#pkg-overview)
 * [Index](#pkg-index)
@@ -34,7 +34,7 @@
 
 
 #### <a name="pkg-files">Package files</a>
-[db.go](/src/Smilo-blackbox/src/data/db.go) [encrypted_raw_transaction.go](/src/Smilo-blackbox/src/data/encrypted_raw_transaction.go) [encrypted_transaction.go](/src/Smilo-blackbox/src/data/encrypted_transaction.go) [log.go](/src/Smilo-blackbox/src/data/log.go) [peer.go](/src/Smilo-blackbox/src/data/peer.go) 
+[db.go](/src/Didux-blackbox/src/data/db.go) [encrypted_raw_transaction.go](/src/Didux-blackbox/src/data/encrypted_raw_transaction.go) [encrypted_transaction.go](/src/Didux-blackbox/src/data/encrypted_transaction.go) [log.go](/src/Didux-blackbox/src/data/log.go) [peer.go](/src/Didux-blackbox/src/data/peer.go) 
 
 
 

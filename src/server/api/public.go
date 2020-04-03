@@ -22,18 +22,18 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"Smilo-blackbox/src/data"
+	"Didux-blackbox/src/data/types"
 
 	"encoding/base64"
 	"strings"
 
-	"Smilo-blackbox/src/server/encoding"
+	"Didux-blackbox/src/server/encoding"
 
 	"github.com/gorilla/mux"
 
-	"Smilo-blackbox/src/crypt"
-	"Smilo-blackbox/src/server/syncpeer"
-	"Smilo-blackbox/src/utils"
+	"Didux-blackbox/src/crypt"
+	"Didux-blackbox/src/server/syncpeer"
+	"Didux-blackbox/src/utils"
 )
 
 // GetPartyInfo It receives a POST request with a json containing url and key, returns local publicKeys and a proof that private key is known.
@@ -128,7 +128,7 @@ func Push(w http.ResponseWriter, r *http.Request) {
 	}
 
 	encoding.Deserialize(payload)
-	encTrans := data.NewEncryptedTransaction(payload)
+	encTrans := types.NewEncryptedTransaction(payload)
 
 	if encTrans == nil {
 		message := fmt.Sprintf("Cannot save transaction.")
@@ -228,7 +228,7 @@ func Resend(w http.ResponseWriter, r *http.Request) {
 			requestError(w, http.StatusBadRequest, message)
 			return
 		}
-		encTrans, err := data.FindEncryptedTransaction(key)
+		encTrans, err := types.FindEncryptedTransaction(key)
 		if err != nil {
 			message := fmt.Sprintf("Invalid request: %s, error (%s) Finding Encrypted Transaction.", r.URL, err)
 			log.WithError(err).Error(message)
@@ -282,7 +282,7 @@ func Delete(w http.ResponseWriter, r *http.Request) {
 		requestError(w, http.StatusBadRequest, message)
 		return
 	}
-	encTrans, err := data.FindEncryptedTransaction(key)
+	encTrans, err := types.FindEncryptedTransaction(key)
 	if encTrans == nil || err != nil {
 		message := fmt.Sprintf("Transaction key: %s not found", jsonReq.Key)
 		log.WithError(err).Error(message)
@@ -315,7 +315,7 @@ func TransactionDelete(w http.ResponseWriter, r *http.Request) {
 		requestError(w, http.StatusBadRequest, message)
 		return
 	}
-	encTrans, err := data.FindEncryptedTransaction(key)
+	encTrans, err := types.FindEncryptedTransaction(key)
 	if encTrans == nil || err != nil {
 		message := fmt.Sprintf("Transaction key: %s not found", params["key"])
 		log.WithError(err).Error(message)
@@ -390,6 +390,10 @@ func StoreRaw(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	sendResp := KeyJSON{Key: base64.StdEncoding.EncodeToString(encRawTrans.Hash)}
+
+	messageDebug := fmt.Sprintf("Response: %s", base64.StdEncoding.EncodeToString(encRawTrans.Hash))
+	log.Debug(messageDebug)
+
 	err = json.NewEncoder(w).Encode(sendResp)
 	if err != nil {
 		message := fmt.Sprintf("Error encoding json: %s", err)
@@ -458,7 +462,7 @@ func Metrics(w http.ResponseWriter, r *http.Request) {
 	//TODO:
 }
 
-func createNewEncodedRawTransaction(w http.ResponseWriter, r *http.Request, payload []byte, fromEncoded []byte) *data.EncryptedRawTransaction {
+func createNewEncodedRawTransaction(w http.ResponseWriter, r *http.Request, payload []byte, fromEncoded []byte) *types.EncryptedRawTransaction {
 	recipients := make([][]byte, 1)
 	recipients[0] = crypt.GetPublicKeys()[0]
 	encPayload, err := encoding.EncodePayloadData(payload, fromEncoded, recipients)
@@ -468,7 +472,7 @@ func createNewEncodedRawTransaction(w http.ResponseWriter, r *http.Request, payl
 		requestError(w, http.StatusInternalServerError, message)
 		return nil
 	}
-	encRawTrans := data.NewEncryptedRawTransaction(*encPayload.Serialize(), encPayload.Sender)
+	encRawTrans := types.NewEncryptedRawTransaction(*encPayload.Serialize(), encPayload.Sender)
 	err = encRawTrans.Save()
 	if err != nil {
 		log.WithError(err).Error("Could not encRawTrans.Save()")

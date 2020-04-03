@@ -17,12 +17,17 @@
 package server
 
 import (
+	"Didux-blackbox/src/data/types"
+	"bytes"
+	"io"
+	"io/ioutil"
 	"net/http"
+	"strings"
 	"testing"
 
 	"gopkg.in/urfave/cli.v1"
 
-	"Smilo-blackbox/src/server/api"
+	"Didux-blackbox/src/server/api"
 
 	"encoding/base64"
 	"encoding/json"
@@ -32,10 +37,10 @@ import (
 	"os"
 	"time"
 
-	"Smilo-blackbox/src/crypt"
-	"Smilo-blackbox/src/server/config"
-	"Smilo-blackbox/src/server/syncpeer"
-	"Smilo-blackbox/src/utils"
+	"Didux-blackbox/src/crypt"
+	"Didux-blackbox/src/server/config"
+	"Didux-blackbox/src/server/syncpeer"
+	"Didux-blackbox/src/utils"
 )
 
 func TestMain(m *testing.M) {
@@ -45,12 +50,31 @@ func TestMain(m *testing.M) {
 	if err != nil {
 		panic("Could not open config for server_hack_test")
 	}
-
 	go StartServer()
 
 	config.WorkDir.Value = ""
 
 	time.Sleep(2000000000)
+	pk, _ := base64.StdEncoding.DecodeString("OeVDzTdR95fhLKIgpBLxqdDNXYzgozgi7dnnS125A3w=")
+	pkURLTest := types.NewPublicKeyURL(pk, "http://test")
+	err = pkURLTest.Save()
+	if err != nil {
+		os.Exit(1)
+	}
+
+	client := syncpeer.GetHTTPClient()
+	client.PostResponseFunction =
+		func(url, contentType string, body io.Reader) (resp *http.Response, err error) {
+			if strings.Contains(url, "http://test") {
+				return &http.Response{
+					Body:       ioutil.NopCloser(bytes.NewBuffer([]byte(""))),
+					StatusCode: http.StatusOK,
+				}, nil
+
+			}
+			return client.Client.Post(url, contentType, body)
+		}
+
 	retcode := m.Run()
 	os.Exit(retcode)
 }

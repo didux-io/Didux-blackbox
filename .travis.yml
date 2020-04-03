@@ -1,5 +1,5 @@
 language: go
-go_import_path: Smilo-blackbox
+go_import_path: Didux-blackbox
 sudo: false
 matrix:
   include:

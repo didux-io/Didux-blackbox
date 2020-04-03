@@ -17,9 +17,9 @@
 package test
 
 import (
-	"Smilo-blackbox/src/server"
-	"Smilo-blackbox/src/server/api"
-	"Smilo-blackbox/src/server/syncpeer"
+	"Didux-blackbox/src/server"
+	"Didux-blackbox/src/server/api"
+	"Didux-blackbox/src/server/syncpeer"
 	"bytes"
 	"encoding/base64"
 	"encoding/json"

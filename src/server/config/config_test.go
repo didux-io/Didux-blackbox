@@ -25,7 +25,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"Smilo-blackbox/src/crypt"
+	"Didux-blackbox/src/crypt"
 )
 
 const configFile = "./config_test.conf"

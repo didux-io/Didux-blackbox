@@ -34,10 +34,6 @@
   version = "1.0.0"
 
 [[constraint]]
-  name = "github.com/ethereum/go-ethereum"
-  version = "1.8.12"
-
-[[constraint]]
   branch = "master"
   name = "github.com/facebookgo/grace"
 
@@ -76,6 +72,14 @@
 [[constraint]]
   name = "gopkg.in/urfave/cli.v1"
   version = "1.20.0"
+
+[[constraint]]
+  name = "github.com/aws/aws-sdk-go"
+  version = "1.20.18"
+
+[[constraint]]
+  name = "github.com/go-redis/redis"
+  version = "6.15.3"
 
 [prune]
   go-tests = true

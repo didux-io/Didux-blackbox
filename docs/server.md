@@ -1,7 +1,7 @@
 
 
 # server
-`import "Smilo-blackbox/src/server"`
+`import "Didux-blackbox/src/server"`
 
 * [Overview](#pkg-overview)
 * [Index](#pkg-index)
@@ -38,7 +38,7 @@
 
 
 #### <a name="pkg-files">Package files</a>
-[p2p.go](/src/Smilo-blackbox/src/server/p2p.go) [p2p_func.go](/src/Smilo-blackbox/src/server/p2p_func.go) [server.go](/src/Smilo-blackbox/src/server/server.go) [server_utils.go](/src/Smilo-blackbox/src/server/server_utils.go) 
+[p2p.go](/src/Didux-blackbox/src/server/p2p.go) [p2p_func.go](/src/Didux-blackbox/src/server/p2p_func.go) [server.go](/src/Didux-blackbox/src/server/server.go) [server_utils.go](/src/Didux-blackbox/src/server/server_utils.go) 
 
 
 
