@@ -10,3 +10,4 @@ key.txt
 blackbox-peers.db
 *.ipc
 vendor
+*.db

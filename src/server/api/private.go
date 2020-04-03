@@ -269,13 +269,7 @@ func createNewEncodedTransaction(w http.ResponseWriter, r *http.Request, payload
 		return nil, err
 	}
 	encTrans := types.NewEncryptedTransaction(*encPayload.Serialize())
-	err = encTrans.Save()
-	if err != nil {
-		message := "Error saving encrypted transaction."
-		log.Error(message)
-		requestError(w, http.StatusInternalServerError, message)
-		return nil, err
-	}
+
 	failed := pushToAllRecipients(recipients, encTrans)
 	if len(failed) > 0 {
 		// TODO: Think about a retry queue, it will be useful for mobile blackboxes
@@ -288,10 +282,32 @@ func createNewEncodedTransaction(w http.ResponseWriter, r *http.Request, payload
 
 func pushToAllRecipients(recipients [][]byte, encTrans *types.EncryptedTransaction) []string {
 	failedRecipients := make([]string, 0, len(recipients))
+	var keys []string
+
+	for _, key := range crypt.GetPublicKeys() {
+			keys = append(keys, base64.StdEncoding.EncodeToString(key))
+		}
+
 	for _, recipient := range recipients {
-		err := PushTransactionForOtherNodes(*encTrans, recipient)
-		if err != nil {
-			failedRecipients = append(failedRecipients, base64.StdEncoding.EncodeToString(recipient))
+
+		// If recipient is this vault, save encTrans, else send to other node
+		if RecipientIsVault(base64.StdEncoding.EncodeToString(recipient), keys) {
+			message := fmt.Sprintf("Vault is in SharedWith List, saving transaction.")
+			log.Info(message)
+			err := encTrans.Save()
+
+			if err != nil {
+				message := "Error saving encrypted transaction."
+				log.Error(message)
+				failedRecipients = append(failedRecipients, base64.StdEncoding.EncodeToString(recipient))
+			}
+		} else {
+			message := fmt.Sprintf("Vault is NOT in SharedWith List, Pushing transaction to other node.")
+			log.Info(message)
+			err := PushTransactionForOtherNodes(*encTrans, recipient)
+			if err != nil {
+				failedRecipients = append(failedRecipients, base64.StdEncoding.EncodeToString(recipient))
+			}
 		}
 	}
 	return failedRecipients

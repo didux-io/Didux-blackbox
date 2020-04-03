@@ -17,13 +17,12 @@
 package api
 
 import (
+	"Didux-blackbox/src/data/types"
 	"encoding/base64"
 	"encoding/hex"
 	"encoding/json"
 	"fmt"
 	"net/http"
-
-	"Didux-blackbox/src/data/types"
 
 	"bytes"
 
@@ -81,7 +80,8 @@ func RetrieveAndDecryptPayload(w http.ResponseWriter, r *http.Request, key []byt
 		return nil
 	}
 
-	fmt.Sprintf("Transaction key: %s found", hex.EncodeToString(key))
+	traceMessage := fmt.Sprintf("Transaction key: %s found", hex.EncodeToString(key))
+	log.Trace(traceMessage)
 
 	encodedPayloadData := encoding.Deserialize(encTrans.EncodedPayload)
 	payload := encodedPayloadData.Decode(to)
@@ -123,4 +123,14 @@ func requestError(w http.ResponseWriter, returnCode int, message string) {
 	if err != nil {
 		log.WithError(err).Error("Failed to fmt.Fprintf(w, message)")
 	}
+}
+
+// Check if recipient is this vault
+func RecipientIsVault(recipient string, publicKeys []string) bool {
+	for _, key := range publicKeys {
+		if key == recipient {
+			return true
+		}
+	}
+	return false
 }

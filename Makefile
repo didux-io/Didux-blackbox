@@ -2,11 +2,11 @@
 
 # Copyright 2019 The Smilo-blackbox Authors
 
-PACKAGES = $(shell find ./src -type d -not -path '\./src')
-GOBIN = $(shell pwd)/build/bin
-GO ?= latest
+PACKAGES=$(shell find ./src -type d -not -path '\./src')
+GOBIN=$(shell pwd)/build/bin
+GO?=latest
 
-GIT_REV=$$(git rev-parse --short HEAD)
+GIT_REV=$(git rev-parse --short HEAD)
 
 VERSION='v0-1'
 
